@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare Roofing Prices | Get Your Free Quote Today</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1a3a5c;
+    --navy-light: #244d7a;
+    --gold: #c8901a;
+    --gold-light: #f0a820;
+    --cream: #faf8f4;
+    --white: #ffffff;
+    --gray-light: #f1efe8;
+    --gray-mid: #888780;
+    --gray-text: #444441;
+    --text: #1a1a18;
+    --green: #2d6e3e;
+    --green-light: #eaf3de;
+  }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    background: var(--navy);
+    color: #b8d4f0;
+    font-size: 13px;
+    text-align: center;
+    padding: 8px 16px;
+    letter-spacing: 0.02em;
+  }
+  .topbar strong { color: #fff; }
+
+  /* HEADER */
+  header {
+    background: var(--white);
+    border-bottom: 3px solid var(--gold);
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .logo {
+    font-family: 'Merriweather', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+  .logo span { color: var(--gold); }
+  .header-badge {
+    background: var(--green-light);
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #c0dd97;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, var(--navy) 0%, #0f2a45 100%);
+    color: var(--white);
+    padding: 60px 24px 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    background: rgba(200,144,26,0.08);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 280px; height: 280px;
+    background: rgba(200,144,26,0.06);
+    border-radius: 50%;
+  }
+  .hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(200,144,26,0.2);
+    color: var(--gold-light);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(200,144,26,0.3);
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(28px, 5vw, 46px);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  .hero h1 em { color: var(--gold-light); font-style: normal; }
+  .hero p {
+    font-size: clamp(16px, 2.5vw, 19px);
+    color: #b8d4f0;
+    max-width: 580px;
+    margin: 0 auto 36px;
+    line-height: 1.65;
+  }
+
+  /* CTA BUTTON */
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 18px 44px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 4px 20px rgba(200,144,26,0.35);
+  }
+  .btn-primary:hover { background: #b07d14; transform: translateY(-2px); }
+  .btn-note {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #7aa8d0;
+  }
+
+  /* TRUST STRIP */
+  .trust-strip {
+    background: var(--white);
+    border-bottom: 1px solid #e8e6df;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-text);
+  }
+  .trust-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  /* MAIN CONTENT */
+  .main { max-width: 860px; margin: 0 auto; padding: 48px 24px; }
+
+  /* HOW IT WORKS */
+  .section-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .section-sub {
+    font-size: 16px;
+    color: var(--gray-mid);
+    margin-bottom: 40px;
+    max-width: 560px;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+  .step {
+    background: var(--white);
+    border: 1px solid #e4e2db;
+    border-radius: 10px;
+    padding: 28px 24px;
+    position: relative;
+  }
+  .step-num {
+    width: 38px; height: 38px;
+    background: var(--navy);
+    color: #fff;
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .step h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .step p { font-size: 14px; color: var(--gray-mid); line-height: 1.55; }
+
+  /* BENEFITS */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 56px;
+  }
+  .benefit-card {
+    background: var(--white);
+    border: 1px solid #e4e2db;
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    padding: 22px 20px;
+  }
+  .benefit-card h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .benefit-card p { font-size: 14px; color: var(--gray-mid); line-height: 1.5; }
+
+  /* SENIOR SECTION */
+  .senior-box {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 12px;
+    padding: 36px 40px;
+    margin-bottom: 56px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: center;
+  }
+  @media (max-width: 600px) {
+    .senior-box { grid-template-columns: 1fr; padding: 28px 24px; }
+  }
+  .senior-box h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .senior-box p { font-size: 15px; color: #b8d4f0; line-height: 1.6; }
+  .senior-badge {
+    background: var(--gold);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 6px;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  /* FORM SECTION */
+  .form-section {
+    background: var(--white);
+    border: 1px solid #e4e2db;
+    border-radius: 14px;
+    padding: 44px 40px;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+  @media (max-width: 600px) { .form-section { padding: 28px 20px; } }
+  .form-section .section-title { margin-bottom: 8px; }
+  .form-section .section-sub { margin: 0 auto 32px; }
+
+  .zip-form {
+    display: flex;
+    gap: 12px;
+    max-width: 460px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .zip-input {
+    flex: 1;
+    min-width: 160px;
+    padding: 16px 20px;
+    font-size: 17px;
+    font-family: 'Source Sans 3', sans-serif;
+    border: 2px solid #d3d1c7;
+    border-radius: 6px;
+    outline: none;
+    color: var(--text);
+    background: var(--cream);
+    transition: border-color 0.2s;
+  }
+  .zip-input:focus { border-color: var(--navy); }
+  .zip-input::placeholder { color: #b4b2a9; }
+
+  /* DISCLAIMER */
+  .disclaimer {
+    background: #fff8ed;
+    border: 1px solid #f5d88a;
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: #7a6020;
+    line-height: 1.55;
+    margin-bottom: 48px;
+  }
+  .disclaimer strong { color: #5a4510; }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    color: #7aa8d0;
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  footer a { color: #b8d4f0; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .footer-links { margin-top: 10px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+  /* UTIL */
+  .divider { border: none; border-top: 1px solid #e4e2db; margin: 48px 0; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  Serving homeowners across the United States &mdash; <strong>No obligation, no hidden fees</strong>
+</div>
+
+<header>
+  <div class="logo">Home<span>Flow</span></div>
+  <div class="header-badge">&#10003; 100% Free Quotes</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Roofing Price Comparison</div>
+    <h1>Compare Roofing Costs From<br><em>Local Contractors Near You</em></h1>
+    <p>Get multiple roofing quotes and compare prices side-by-side. Homeowners who compare may find better savings on their next roofing project.</p>
+    <a href="YOUR_AFFILIATE_LINK_HERE" class="btn-primary">Get My Free Roofing Quote</a>
+    <span class="btn-note">Takes less than 2 minutes &middot; No commitment required</span>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-item">
+    <svg class="trust-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="10" cy="10" r="9" stroke="#2d6e3e" stroke-width="1.5"/>
+      <path d="M6 10.5l2.5 2.5 5-5" stroke="#2d6e3e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Free, no-obligation quotes
+  </div>
+  <div class="trust-item">
+    <svg class="trust-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="10" cy="10" r="9" stroke="#2d6e3e" stroke-width="1.5"/>
+      <path d="M6 10.5l2.5 2.5 5-5" stroke="#2d6e3e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Compare multiple prices
+  </div>
+  <div class="trust-item">
+    <svg class="trust-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="10" cy="10" r="9" stroke="#2d6e3e" stroke-width="1.5"/>
+      <path d="M6 10.5l2.5 2.5 5-5" stroke="#2d6e3e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Local contractors only
+  </div>
+  <div class="trust-item">
+    <svg class="trust-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="10" cy="10" r="9" stroke="#2d6e3e" stroke-width="1.5"/>
+      <path d="M6 10.5l2.5 2.5 5-5" stroke="#2d6e3e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Available across the US
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+  <!-- HOW IT WORKS -->
+  <div class="section-label">How it works</div>
+  <h2 class="section-title">Three simple steps to compare roofing prices</h2>
+  <p class="section-sub">Getting a roofing quote has never been easier. Here's how homeowners across the country are comparing costs today.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Enter your zip code</h3>
+      <p>We match you with qualified local roofing contractors in your area.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Share your project details</h3>
+      <p>Tell us a bit about your home so contractors can give you an accurate price.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Compare quotes &amp; savings</h3>
+      <p>Review multiple roofing price options and choose what works best for you.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- BENEFITS -->
+  <div class="section-label">Why compare</div>
+  <h2 class="section-title">Homeowners who compare roofing costs could potentially save</h2>
+  <p class="section-sub">Roofing projects are a significant investment. Comparing prices from multiple contractors may help you find better value.</p>
+
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <h4>See real roofing prices</h4>
+      <p>Get accurate, local cost estimates based on your specific home and project needs.</p>
+    </div>
+    <div class="benefit-card">
+      <h4>Compare multiple contractors</h4>
+      <p>Review quotes side-by-side to understand the full range of available pricing.</p>
+    </div>
+    <div class="benefit-card">
+      <h4>Make an informed decision</h4>
+      <p>No pressure, no commitment. Take your time and choose the right option for your home.</p>
+    </div>
+    <div class="benefit-card">
+      <h4>Local professionals only</h4>
+      <p>We only connect you with contractors who serve your specific area.</p>
+    </div>
+  </div>
+
+  <!-- SENIOR SECTION -->
+  <div class="senior-box">
+    <div>
+      <h3>Homeowners 55+ may find additional savings options</h3>
+      <p>Many local contractors offer special pricing considerations for long-term homeowners. Comparing quotes could help you find the best available price for your roofing project — regardless of your age.</p>
+    </div>
+    <div class="senior-badge">Compare<br>Prices Today</div>
+  </div>
+
+  <!-- FORM / CTA -->
+  <div class="form-section">
+    <div class="section-label">Get started</div>
+    <h2 class="section-title">Get your free roofing quote now</h2>
+    <p class="section-sub">Enter your zip code below to compare roofing costs from contractors in your area.</p>
+    <div class="zip-form">
+      <input type="text" class="zip-input" placeholder="Enter your ZIP code" maxlength="5" inputmode="numeric">
+      <a href="YOUR_AFFILIATE_LINK_HERE" class="btn-primary" style="padding: 16px 28px; font-size: 16px;">Compare Prices &rarr;</a>
+    </div>
+    <p style="margin-top: 16px; font-size: 13px; color: var(--gray-mid);">By clicking, you agree to receive roofing quotes from local contractors. This is a free service for homeowners.</p>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <strong>Important:</strong> Roofing projects involve real costs. This service connects homeowners with local contractors who will provide pricing information. Quotes are not free services &mdash; they are estimates for paid roofing work. Actual costs will vary based on your home, location, materials, and contractor. Comparing quotes does not obligate you to purchase any service. Potential savings are not guaranteed and will vary.
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>&copy; 2025 HomeFlow &mdash; Roofing Price Comparison Service</div>
+  <div style="margin-top: 6px; color: #5a88b0;">This site connects homeowners with local roofing contractors. We are not a contractor, roofing company, or financial institution.</div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
